@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author a22pedrovsp
  * @author a20amelych
  */
+
 public class ProyectoPiedraPapelYTijeras {
 
     /**
@@ -48,27 +49,35 @@ public class ProyectoPiedraPapelYTijeras {
         int elecOrd = 0;
 
         // Zona de Amely
-        while (puntosJugador < 3 || puntosMaquina < 3) {
-        
-            elecUsr = entrada.nextInt();
-            elecOrd = new java.util.Random().nextInt(3);
 
-            if (elecUsr == (elecOrd + 1) % 3) {
-                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
-                System.out.println("Gana PC");
-                puntosMaquina+=1;
-            }
-            // Condición del que gane yo (u1 0o)
-            else if (elecOrd == (elecUsr + 1) % 3) {
-                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
-                System.out.println("Gano YO");
-                puntosJugador+=1;
-            }
+        boolean seguirJugando = true;
 
-            else {
-                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
-                System.out.println("Empate");
+        while (seguirJugando) {
+            while (puntosJugador < 3 || puntosMaquina < 3) {
+
+                elecUsr = entrada.nextInt();
+                elecOrd = new java.util.Random().nextInt(3);
+
+                if (elecUsr == (elecOrd + 1) % 3) {
+                    System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
+                    System.out.println("Gana PC");
+                    puntosMaquina += 1;
+                }
+                // Condición del que gane yo (u1 0o)
+                else if (elecOrd == (elecUsr + 1) % 3) {
+                    System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
+                    System.out.println("Gano YO");
+                    puntosJugador += 1;
+                }
+
+                else {
+                    System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
+                    System.out.println("Empate");
+                }
             }
+            System.out.println("¿Deseas seguir jugando Y/N?");
+            
         }
+
     }
 }
