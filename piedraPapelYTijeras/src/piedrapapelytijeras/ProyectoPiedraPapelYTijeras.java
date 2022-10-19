@@ -15,22 +15,23 @@ import java.util.Scanner;
 public class ProyectoPiedraPapelYTijeras {
 
     /**
-     * Esta función simplemente acepta el si va ganando o perdiendo el jugador, y devuelve el ser invencible o no
+     * Esta función simplemente acepta el si va ganando o perdiendo el jugador, y
+     * devuelve el ser invencible o no
      * 
      * @param estado Se le pasa por un booleano si va ganando o perdiendo
      * @return Nivel de dificultad calculado.
      */
 
-    public static byte tramposo(boolean estado){
-       return 0;
+    public static byte tramposo(boolean estado) {
+        return 0;
     }
-    
-    public static String ganador(String[] jugadorA, String[] jugadorB){
+
+    public static String ganador(String[] jugadorA, String[] jugadorB) {
         return "test";
     }
-    
+
     public static void main(String[] args) {
-        
+
         final String encoding = "ISO-8859-1";
         Scanner entrada = new Scanner(System.in, encoding);
 
@@ -43,27 +44,31 @@ public class ProyectoPiedraPapelYTijeras {
         byte puntosJugador = 0;
         byte puntosMaquina = 0;
 
-        int elecUsr = entrada.nextInt();
-        int elecOrd = new java.util.Random().nextInt(3);
+        int elecUsr = 0;
+        int elecOrd = 0;
+
         // Zona de Amely
-        if (puntosJugador > 3 || puntosMaquina > 3) {
-            switch (elecUsr) {
-                case 0:
-                    System.out.println("");
-                    break;
-                case 1:
+        while (puntosJugador < 3 || puntosMaquina < 3) {
 
-                    break;
-                case 2:
+            elecUsr = entrada.nextInt();
+            entrada.next();
+            elecOrd = new java.util.Random().nextInt(3);
 
-                    break;
+            if (elecUsr == (elecOrd + 1) % 3) {
+                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
+                System.out.println("Gana PC");
+
+            }
+            // Condición del que gane yo (u1 0o)
+            else if (elecUsr == (elecOrd - 1) % 3) {
+                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
+                System.out.println("Gano YO");
+            }
+
+            else {
+                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
+                System.out.println("Empate");
             }
         }
-        
-        // Zona de Pedro
-        
-        
-        
     }
-    
 }
