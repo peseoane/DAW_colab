@@ -22,16 +22,17 @@ public class ProyectoPiedraPapelYTijeras {
 
     public static void main(String[] args) {
         
-
         Scanner entrada = new Scanner(System.in);
-        String texto = entrada.nextLine();
-        System.out.println(texto);
 
         // Zona principal
         System.out.println("Elije piedra, papel o tijeras: ");
-
+        short puntos = 0;
+        String eleccion = entrada.nextLine();
+        
         // Zona de Amely
-
+        if (puntos > 3) {
+            
+        }
         // Zona de Pedro
     }
     
