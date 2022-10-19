@@ -16,6 +16,7 @@ public class ProyectoPiedraPapelYTijeras {
     public static void main(String[] args) {
         System.out.println("Pedro");
         System.out.println("Hola mundo");
+        System.out.println("Hola mundo amely");
         System.out.println("hola holita");
     }
     
