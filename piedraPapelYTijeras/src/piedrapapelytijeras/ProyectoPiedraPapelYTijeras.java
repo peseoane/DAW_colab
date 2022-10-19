@@ -26,11 +26,12 @@ public class ProyectoPiedraPapelYTijeras {
 
         // Zona principal
         System.out.println("Elije piedra, papel o tijeras: ");
-        short puntos = 0;
+        short puntosJugador = 0;
+        short puntosMaquina = 0;
         String eleccion = entrada.nextLine();
         
         // Zona de Amely
-        if (puntos > 3) {
+        if (puntosJugador > 3 || puntosMaquina > 3) {
             
         }
         // Zona de Pedro
