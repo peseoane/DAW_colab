@@ -22,7 +22,7 @@ public class ProyectoPiedraPapelYTijeras {
      */
 
     public static byte tramposo(boolean estado){
-        
+       return 0;
     }
     
     public static void main(String[] args) {
