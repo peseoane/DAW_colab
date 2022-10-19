@@ -5,15 +5,25 @@
 package proyecto.piedra.papel.y.tijeras;
 
 /**
- *
+ * Piedra, papel y tijera.
+ * 
  * @author a22pedrovsp
+ * @author a20amelych
  */
 public class ProyectoPiedraPapelYTijeras {
 
     /**
      * @param args the command line arguments
      */
+
+    
+
     public static void main(String[] args) {
+        
+        // Zona principal
+
+    
+        
         System.out.println("Pedro");
         System.out.println("Hola mundo");
         System.out.println("Hola mundo amely");
