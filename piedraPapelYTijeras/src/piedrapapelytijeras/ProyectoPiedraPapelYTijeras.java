@@ -39,8 +39,10 @@ public class ProyectoPiedraPapelYTijeras {
         System.out.println("Elije 0 para piedra");
         System.out.println("Elije 1 para papel");
         System.out.println("Elije 2 para tijera");
-        short puntosJugador = 0;
-        short puntosMaquina = 0;
+
+        byte puntosJugador = 0;
+        byte puntosMaquina = 0;
+
         int elecUsr = entrada.nextInt();
         int elecOrd = new java.util.Random().nextInt(3);
         // Zona de Amely
@@ -50,15 +52,14 @@ public class ProyectoPiedraPapelYTijeras {
                     System.out.println("");
                     break;
                 case 1:
-                    
+
                     break;
-                case 2: 
-                    
+                case 2:
+
                     break;
-                default:
-                    throw new AssertionError();
-            } 
-        } 
+            }
+        }
+        
         // Zona de Pedro
         
         
