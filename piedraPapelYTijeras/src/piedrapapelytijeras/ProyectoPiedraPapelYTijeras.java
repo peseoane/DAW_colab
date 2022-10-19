@@ -31,15 +31,24 @@ public class ProyectoPiedraPapelYTijeras {
         Scanner entrada = new Scanner(System.in, encoding);
 
         // Zona principal
-        System.out.println("Elije piedra, papel o tijeras: ");
+        System.out.println("Elije piedra, papel o tijera: ");
+        System.out.println("Elije 0 para piedra");
+        System.out.println("Elije 1 para papel");
+        System.out.println("Elije 2 para tijera");
         short puntosJugador = 0;
         short puntosMaquina = 0;
-        String eleccion = entrada.nextLine();
-        
+        int elecUsr = entrada.nextInt();
+        int numero = new java.util.Random().nextInt(3);
         // Zona de Amely
         if (puntosJugador > 3 || puntosMaquina > 3) {
-            
-        }
+            switch (elecUsr) {
+                case 0:
+                    System.out.println("");
+                    break;
+                default:
+                    throw new AssertionError();
+            } 
+        } 
         // Zona de Pedro
         
         
