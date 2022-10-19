@@ -42,12 +42,18 @@ public class ProyectoPiedraPapelYTijeras {
         short puntosJugador = 0;
         short puntosMaquina = 0;
         int elecUsr = entrada.nextInt();
-        int numero = new java.util.Random().nextInt(3);
+        int elecOrd = new java.util.Random().nextInt(3);
         // Zona de Amely
         if (puntosJugador > 3 || puntosMaquina > 3) {
             switch (elecUsr) {
                 case 0:
                     System.out.println("");
+                    break;
+                case 1:
+                    
+                    break;
+                case 2: 
+                    
                     break;
                 default:
                     throw new AssertionError();
