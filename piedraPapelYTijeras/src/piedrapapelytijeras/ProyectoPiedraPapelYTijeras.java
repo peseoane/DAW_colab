@@ -15,14 +15,20 @@ import java.util.Scanner;
 public class ProyectoPiedraPapelYTijeras {
 
     /**
-     * @param args the command line arguments
+     * Esta función simplemente acepta el si va ganando o perdiendo el jugador, y devuelve el ser invencible o no
+     * 
+     * @param estado Se le pasa por un booleano si va ganando o perdiendo
+     * @return Nivel de dificultad calculado.
      */
 
+    public static byte tramposo(boolean estado){
+        
+    }
     
-
     public static void main(String[] args) {
         
-        Scanner entrada = new Scanner(System.in);
+        final String encoding = "ISO-8859-1";
+        Scanner entrada = new Scanner(System.in, encoding);
 
         // Zona principal
         System.out.println("Elije piedra, papel o tijeras: ");
@@ -35,6 +41,9 @@ public class ProyectoPiedraPapelYTijeras {
             
         }
         // Zona de Pedro
+        
+        
+        
     }
     
 }
