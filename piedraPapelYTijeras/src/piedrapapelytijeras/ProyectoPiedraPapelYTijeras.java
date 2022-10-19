@@ -25,6 +25,10 @@ public class ProyectoPiedraPapelYTijeras {
        return 0;
     }
     
+    public static String ganador(String[] jugadorA, String[] jugadorB){
+        return "test";
+    }
+    
     public static void main(String[] args) {
         
         final String encoding = "ISO-8859-1";
