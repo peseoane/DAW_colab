@@ -30,7 +30,9 @@ public class ProyectoPiedraPapelYTijeras {
         // Zona principal
         System.out.println("Elije piedra, papel o tijeras: ");
 
+        // Zona de Amely
 
+        // Zona de Pedro
     }
     
 }
