@@ -48,10 +48,9 @@ public class ProyectoPiedraPapelYTijeras {
         int elecOrd = 0;
 
         // Zona de Amely
-        while (puntosJugador > 3 || puntosMaquina > 3) {
+        while (puntosJugador < 3 || puntosMaquina < 3) {
         
             elecUsr = entrada.nextInt();
-            entrada.next();
             elecOrd = new java.util.Random().nextInt(3);
 
             if (elecUsr == (elecOrd + 1) % 3) {
@@ -60,7 +59,7 @@ public class ProyectoPiedraPapelYTijeras {
                 puntosMaquina+=1;
             }
             // Condición del que gane yo (u1 0o)
-            else if (elecUsr == (elecOrd - 1) % 3) {
+            else if (elecOrd == (elecUsr + 1) % 3) {
                 System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
                 System.out.println("Gano YO");
                 puntosJugador+=1;
