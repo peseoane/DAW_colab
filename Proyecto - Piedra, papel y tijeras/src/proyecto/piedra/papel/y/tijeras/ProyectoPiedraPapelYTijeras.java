@@ -22,12 +22,8 @@ public class ProyectoPiedraPapelYTijeras {
         
         // Zona principal
 
-    
         
-        System.out.println("Pedro");
-        System.out.println("Hola mundo");
-        System.out.println("Hola mundo amely");
-        System.out.println("hola holita");
+
     }
     
 }
