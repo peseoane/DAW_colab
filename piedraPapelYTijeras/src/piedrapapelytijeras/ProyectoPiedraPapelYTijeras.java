@@ -35,6 +35,7 @@ public class ProyectoPiedraPapelYTijeras {
         boolean seguirJugando = true;
         byte puntosJugador = 0;
         byte puntosMaquina = 0;
+
         int resultadoJugada;
         Scanner entrada = new Scanner(System.in, encoding);
         while (seguirJugando) {
@@ -75,13 +76,11 @@ public class ProyectoPiedraPapelYTijeras {
 
             System.out.println("¿Deseas seguir jugando Y/N?");
           
-            entrada.next();
+            entrada.nextLine();
 
             String salirdeljuego = entrada.nextLine();
 
-            System.out.println(salirdeljuego);
-
-            if (salirdeljuego.equals("n")) {
+            if (salirdeljuego.toLowerCase().equals("n")) {
                 System.out.println("saliendo");
             }
         }
