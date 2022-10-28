@@ -13,7 +13,7 @@ jobs:
       - name: Deploy JavaDoc 🚀
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.0.4
         with:
-          GITHUB_TOKEN: ${{ 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}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           javadoc-branch: javadoc
           java-version: 17
           target-folder: javadoc 
