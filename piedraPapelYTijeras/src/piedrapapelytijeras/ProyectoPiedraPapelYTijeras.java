@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package piedrapapelytijeras;
 
 import java.util.Scanner;
@@ -16,12 +13,18 @@ import java.util.Scanner;
 public class ProyectoPiedraPapelYTijeras {
 
     /**
-     * Esta función simplemente acepta el si va ganando o perdiendo el jugador, y
-     * devuelve el ser invencible o no
-     * 
-     * @param estado Se le pasa por un booleano si va ganando o perdiendo
-     * @return Nivel de dificultad calculado.
      */
+
+    static byte whoWin(int jugador, int npc) {
+
+        final byte[][] whoWin = {
+                { 1, 2, 0 },
+                { 0, 1, 2 },
+                { 2, 0, 1 }
+        };
+
+        return whoWin[jugador][npc];
+    }
 
     /**
      * @param args
@@ -30,73 +33,83 @@ public class ProyectoPiedraPapelYTijeras {
 
         final String encoding = "ISO-8859-1";
 
+        final String ANSI_RESET = "\u001B[0m";
+        final String ANSI_RED = "\u001B[31m";
+        final String ANSI_GREEN = "\u001B[32m";
+        final String ANSI_PURPLE = "\u001B[35m";
+
         // Menú principal
 
-        boolean seguirJugando = true;
-        byte puntosJugador = 0;
-        byte puntosMaquina = 0;
-
-        int resultadoJugada;
+        boolean loopGame = true;
+        byte scorePlayer = 0;
+        byte scorePc = 0;
+        byte playerAction;
         String salirdeljuego;
+        String mainDialog = """
+                ### PAPER SCISSORS ROCK! ###
+                It's your turn, what do you choose?
+                0 - Rock.
+                1 - Paper.
+                2 - Scissors.
+                """;
 
-        Scanner entrada = new Scanner(System.in, encoding);
+        Scanner input = new Scanner(System.in, encoding);
 
-        while (seguirJugando) {
-            System.out.println("Elije piedra, papel o tijera: ");
-            System.out.println("Elije 0 para piedra");
-            System.out.println("Elije 1 para papel");
-            System.out.println("Elije 2 para tijera");
+        while (loopGame) {
+            
+            System.out.printf("%s%s%s\n", ANSI_PURPLE, mainDialog, ANSI_RESET);
 
-            int elecUsr = entrada.nextInt();
-            int elecPC = new java.util.Random().nextInt(3);
+            try {
+                playerAction = input.nextByte();
+                int pcAction = new java.util.Random().nextInt(3);
+                System.out.printf("\nThe computer has chosen: %d\n", pcAction);
 
-            // PIEDRA PAPEL TIJERA PARA R.>n0 a n_x -> CRB (-1,1)U(1,0)€0.0
-            final int[][] soluciones = {
-                    { 1, 2, 0 },
-                    { 0, 1, 2 },
-                    { 2, 0, 1 }
-            };
+                switch (whoWin(playerAction, pcAction)) {
+                    case 0:
+                        scorePlayer++;
+                        System.out.printf("""
+                                %sThe player has won this round...
+                                PLAYER [%d][%d]\n%s
+                                """,
+                                ANSI_GREEN, scorePlayer, scorePc, ANSI_RESET);
+                        break;
+                    case 1:
+                        System.out.printf("""
+                                %sDraw...
+                                PLAYER [%d][%d]\n
+                                %s""",
+                                ANSI_PURPLE, scorePlayer, scorePc, ANSI_RESET);
+                        break;
+                    case 2:
+                        scorePc++;
+                        System.out.printf("""
+                                %sThe computer has won this round...
+                                PLAYER [%d][%d]\n
+                                %s""",
+                                ANSI_RED, scorePlayer, scorePc, ANSI_RESET);
+                        break;
 
-            resultadoJugada = soluciones[elecUsr][elecPC];
-
-            System.out.println("PC escoge: " + elecPC);
-
-            switch (resultadoJugada) {
-                case 0:
-                    puntosJugador++;
-
-                    System.out.println("Gana el jugador.");
-                    System.out.printf("PLAYER [%d][%d] PC", puntosJugador, puntosMaquina);
-                    System.out.println();
-                    break;
-                case 1:
-                    System.out.println("Empate");
-                    System.out.printf("PLAYER [%d][%d] PC", puntosJugador, puntosMaquina);
-                    System.out.println();
-                    break;
-                case 2:
-                    System.out.println("Gana el PC");
-                    puntosMaquina++;
-                    System.out.printf("PLAYER [%d][%d] PC", puntosJugador, puntosMaquina);
-                    System.out.println();
-                    break;
-                
-            }
-
-            if (puntosJugador >= 3 || puntosMaquina >= 3) {
-                System.out.println("¿Deseas seguir jugando Y/N?");
-                entrada.nextLine(); // Limpieza de bufer.
-                salirdeljuego = entrada.nextLine();
-                if (salirdeljuego.toLowerCase().equals("n")) {
-                    System.out.println("saliendo...");
-                    seguirJugando = false;
-                    entrada.close();}
-                else{
-                    System.out.println("Reiniciando juego...");
-                    puntosJugador = 0;
-                    puntosMaquina = 0;
-                
                 }
+
+                if (scorePlayer >= 3 || scorePc >= 3) {
+                    System.out.println("Play again?");
+                    input.nextLine(); // Limpieza de bufer.
+                    salirdeljuego = input.nextLine();
+                    if (salirdeljuego.toLowerCase().equals("n")) {
+                        System.err.println("\n### HALT ###");
+                        loopGame = false;
+                        input.close();
+                    } else {
+                        System.out.println("\n### NEW GANE ###\n");
+                        scorePlayer = 0;
+                        scorePc = 0;
+
+                    }
+                }
+            } catch (Exception e) {
+                System.err.printf("%sOnly numbers from 0 to 2 are allowed.%s", ANSI_RED, ANSI_RESET);
+                input.nextLine(); // Limpieza de bufer.
+                java.awt.Toolkit.getDefaultToolkit().beep(); // Alert sound... just from system inherit...
             }
         }
     }
