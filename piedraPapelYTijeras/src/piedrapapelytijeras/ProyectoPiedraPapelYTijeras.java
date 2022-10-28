@@ -29,43 +29,61 @@ public class ProyectoPiedraPapelYTijeras {
     public static void main(String[] args) {
 
         final String encoding = "ISO-8859-1";
-        Scanner entrada = new Scanner(System.in, encoding);
 
-        // Zona principal
-        System.out.println("Elije piedra, papel o tijera: ");
-        System.out.println("Elije 0 para piedra");
-        System.out.println("Elije 1 para papel");
-        System.out.println("Elije 2 para tijera");
+        // Menú principal
 
+        boolean seguirJugando = true;
         byte puntosJugador = 0;
         byte puntosMaquina = 0;
+        int resultadoJugada;
+        Scanner entrada = new Scanner(System.in, encoding);
+        while (seguirJugando) {
+            System.out.println("Elije piedra, papel o tijera: ");
+            System.out.println("Elije 0 para piedra");
+            System.out.println("Elije 1 para papel");
+            System.out.println("Elije 2 para tijera");
 
-        int elecPC = new java.util.Random().nextInt(3);
+            int elecUsr = entrada.nextInt();
+            
+            int elecPC = new java.util.Random().nextInt(3);
 
-        // Zona de Amely
+            // Zona de Amely
 
-        final int[][] soluciones = {
-                { 1, 2, 0 },
-                { 0, 1, 2 },
-                { 2, 0, 1 }
-        };
-        int elecUsr = entrada.nextInt();
-        int jugada = soluciones[elecUsr][elecPC];
+            final int[][] soluciones = {
+                    { 1, 2, 0 },
+                    { 0, 1, 2 },
+                    { 2, 0, 1 }
+            };
 
-        System.out.println("PC escoge: " + elecPC);
+            resultadoJugada = soluciones[elecUsr][elecPC];
 
-        switch (jugada) {
-            case 0:
-                System.out.println("Gano YO");
-                break;
-            case 1:
-                System.out.println("Empate");
-                break;
-            case 2:
-                System.out.println("Gana PC");
-                break;
+            System.out.println("PC escoge: " + elecPC);
+
+            switch (resultadoJugada) {
+                case 0:
+                    System.out.println("Gano YO");
+                    puntosJugador++;
+                    break;
+                case 1:
+                    System.out.println("Empate");
+                    break;
+                case 2:
+                    System.out.println("Gana PC");
+                    puntosMaquina++;
+                    break;
+            }
+
+            System.out.println("¿Deseas seguir jugando Y/N?");
+          
+            entrada.next();
+
+            String salirdeljuego = entrada.nextLine();
+
+            System.out.println(salirdeljuego);
+
+            if (salirdeljuego.equals("n")) {
+                System.out.println("saliendo");
+            }
         }
-        System.out.println("¿Deseas seguir jugando Y/N?");
-
     }
 }
