@@ -9,10 +9,11 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+
       - name: Deploy JavaDoc 🚀
-        working-directory: piedraPapelYTijeras
         uses: MathieuSoysal/Javadoc-publisher.yml@v2.0.4
         with:
+          working-directory: piedraPapelYTijeras
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           javadoc-branch: javadoc
           java-version: 17
