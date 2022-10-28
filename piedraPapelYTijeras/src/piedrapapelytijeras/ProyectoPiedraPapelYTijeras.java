@@ -30,6 +30,9 @@ public class ProyectoPiedraPapelYTijeras {
         return "test";
     }
 
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
 
         final String encoding = "ISO-8859-1";
@@ -48,28 +51,19 @@ public class ProyectoPiedraPapelYTijeras {
         int elecOrd = 0;
 
         // Zona de Amely
-        while (puntosJugador > 3 || puntosMaquina > 3) {
-        
-            elecUsr = entrada.nextInt();
-            entrada.next();
-            elecOrd = new java.util.Random().nextInt(3);
 
-            if (elecUsr == (elecOrd + 1) % 3) {
-                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
-                System.out.println("Gana PC");
-                puntosMaquina+=1;
-            }
-            // Condición del que gane yo (u1 0o)
-            else if (elecUsr == (elecOrd - 1) % 3) {
-                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
-                System.out.println("Gano YO");
-                puntosJugador+=1;
-            }
+        final int[][] soluciones = {
+                { 1, 2, 0 },
+                { 0, 1, 2 },
+                { 2, 0, 1 }
+        };
 
-            else {
-                System.out.println("PC: " + elecOrd + " YO: " + elecUsr);
-                System.out.println("Empate");
+        for (int fila = 0; fila < soluciones.length; fila++) {
+            for (int col = 0; col < soluciones[fila].length; col++) {
+                System.out.println(
+                        "Nuevo valor para [" + fila + "][" + col + "]: "+ soluciones[fila][col]);
             }
         }
+
     }
 }
