@@ -53,20 +53,6 @@ public class ProyectoPiedraPapelYTijeras {
         int jugada = soluciones[elecUsr][elecPC];
 
         System.out.println("PC escoge: " + elecPC);
-        System.out.println(jugada);
-        /*
-         * for (int fila = elecUsr; fila < soluciones.length; fila++) {
-         * for (int col = elecPC; col < soluciones[fila].length; col++) {
-         * // Jugador A
-         * // PC B
-         * 
-         * // Consulta soluciones[YO][PC]=RESULTADO -> switch!
-         * 
-         * 
-         * 
-         * }
-         * }
-         */
 
         switch (jugada) {
             case 0:
