@@ -37,7 +37,10 @@ public class ProyectoPiedraPapelYTijeras {
         byte puntosMaquina = 0;
 
         int resultadoJugada;
+        String salirdeljuego;
+
         Scanner entrada = new Scanner(System.in, encoding);
+
         while (seguirJugando) {
             System.out.println("Elije piedra, papel o tijera: ");
             System.out.println("Elije 0 para piedra");
@@ -45,11 +48,9 @@ public class ProyectoPiedraPapelYTijeras {
             System.out.println("Elije 2 para tijera");
 
             int elecUsr = entrada.nextInt();
-            
             int elecPC = new java.util.Random().nextInt(3);
 
-            // Zona de Amely
-
+            // PIEDRA PAPEL TIJERA PARA R.>n0 a n_x -> CRB (-1,1)U(1,0)€0.0
             final int[][] soluciones = {
                     { 1, 2, 0 },
                     { 0, 1, 2 },
@@ -62,26 +63,40 @@ public class ProyectoPiedraPapelYTijeras {
 
             switch (resultadoJugada) {
                 case 0:
-                    System.out.println("Gano YO");
                     puntosJugador++;
+
+                    System.out.println("Gana el jugador.");
+                    System.out.printf("PLAYER [%d][%d] PC", puntosJugador, puntosMaquina);
+                    System.out.println();
                     break;
                 case 1:
                     System.out.println("Empate");
+                    System.out.printf("PLAYER [%d][%d] PC", puntosJugador, puntosMaquina);
+                    System.out.println();
                     break;
                 case 2:
-                    System.out.println("Gana PC");
+                    System.out.println("Gana el PC");
                     puntosMaquina++;
+                    System.out.printf("PLAYER [%d][%d] PC", puntosJugador, puntosMaquina);
+                    System.out.println();
                     break;
+                
             }
 
-            System.out.println("¿Deseas seguir jugando Y/N?");
-          
-            entrada.nextLine();
-
-            String salirdeljuego = entrada.nextLine();
-
-            if (salirdeljuego.toLowerCase().equals("n")) {
-                System.out.println("saliendo");
+            if (puntosJugador >= 3 || puntosMaquina >= 3) {
+                System.out.println("¿Deseas seguir jugando Y/N?");
+                entrada.nextLine(); // Limpieza de bufer.
+                salirdeljuego = entrada.nextLine();
+                if (salirdeljuego.toLowerCase().equals("n")) {
+                    System.out.println("saliendo...");
+                    seguirJugando = false;
+                    entrada.close();}
+                else{
+                    System.out.println("Reiniciando juego...");
+                    puntosJugador = 0;
+                    puntosMaquina = 0;
+                
+                }
             }
         }
     }
