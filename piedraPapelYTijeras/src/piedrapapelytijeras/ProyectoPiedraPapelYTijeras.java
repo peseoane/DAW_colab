@@ -23,14 +23,6 @@ public class ProyectoPiedraPapelYTijeras {
      * @return Nivel de dificultad calculado.
      */
 
-    public static byte tramposo(boolean estado) {
-        return 0;
-    }
-
-    public static String ganador(String[] jugadorA, String[] jugadorB) {
-        return "test";
-    }
-
     /**
      * @param args
      */
@@ -48,8 +40,7 @@ public class ProyectoPiedraPapelYTijeras {
         byte puntosJugador = 0;
         byte puntosMaquina = 0;
 
-        int elecUsr = 0;
-        int elecOrd = 0;
+        int elecPC = new java.util.Random().nextInt(3);
 
         // Zona de Amely
 
@@ -58,15 +49,37 @@ public class ProyectoPiedraPapelYTijeras {
                 { 0, 1, 2 },
                 { 2, 0, 1 }
         };
+        int elecUsr = entrada.nextInt();
+        int jugada = soluciones[elecUsr][elecPC];
 
-        for (int fila = 0; fila < soluciones.length; fila++) {
-            for (int col = 0; col < soluciones[fila].length; col++) {
-                System.out.println(
-                        "Nuevo valor para [" + fila + "][" + col + "]: "+ soluciones[fila][col]);
-            }
-            System.out.println("¿Deseas seguir jugando Y/N?");
-            
+        System.out.println("PC escoge: " + elecPC);
+        System.out.println(jugada);
+        /*
+         * for (int fila = elecUsr; fila < soluciones.length; fila++) {
+         * for (int col = elecPC; col < soluciones[fila].length; col++) {
+         * // Jugador A
+         * // PC B
+         * 
+         * // Consulta soluciones[YO][PC]=RESULTADO -> switch!
+         * 
+         * 
+         * 
+         * }
+         * }
+         */
+
+        switch (jugada) {
+            case 0:
+                System.out.println("Gano YO");
+                break;
+            case 1:
+                System.out.println("Empate");
+                break;
+            case 2:
+                System.out.println("Gana PC");
+                break;
         }
+        System.out.println("¿Deseas seguir jugando Y/N?");
 
     }
 }
