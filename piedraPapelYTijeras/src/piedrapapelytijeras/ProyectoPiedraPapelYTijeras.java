@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author a22pedrovsp
  * @author a20amelych
  */
+
 public class ProyectoPiedraPapelYTijeras {
 
     /**
@@ -63,6 +64,8 @@ public class ProyectoPiedraPapelYTijeras {
                 System.out.println(
                         "Nuevo valor para [" + fila + "][" + col + "]: "+ soluciones[fila][col]);
             }
+            System.out.println("¿Deseas seguir jugando Y/N?");
+            
         }
 
     }
