@@ -20,7 +20,7 @@ public class ProyectoPiedraPapelYTijeras {
      *                 table with a 100% win chance.
      * @return a byte with a byte, 0: wins the PC, 1: DRAW and 2: wins the player
      */
-    static byte whoWin(int player, int computer) {
+    static byte whoWin(byte player, byte computer) {
 
         /*
          * This matrix takes into account all the possible scenarios that can occur
@@ -138,7 +138,6 @@ public class ProyectoPiedraPapelYTijeras {
                                 %s""",
                                 ANSI_RED, scorePlayer, scorePc, ANSI_RESET);
                         break;
-
                 }
 
                 if (scorePlayer >= 3 || scorePc >= 3) {
@@ -152,9 +151,9 @@ public class ProyectoPiedraPapelYTijeras {
                         System.out.println("\n### NEW GANE ###\n");
                         scorePlayer = 0;
                         scorePc = 0;
-
                     }
                 }
+                
             } catch (Exception e) {
                 System.err.printf("%sOnly numbers from 0 to 2 are allowed.%s", ANSI_RED, ANSI_RESET);
                 input.nextLine(); // Limpieza de bufer.
