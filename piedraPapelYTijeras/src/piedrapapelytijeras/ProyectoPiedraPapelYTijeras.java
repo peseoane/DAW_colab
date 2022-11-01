@@ -44,6 +44,8 @@ public class ProyectoPiedraPapelYTijeras {
 
     public static void main(String[] args) {
 
+        // TODO Those strings should be a class...
+
         final String encoding = "ISO-8859-1";
         final String ANSI_RESET = "\u001B[0m";
         final String ANSI_RED = "\u001B[31m";
