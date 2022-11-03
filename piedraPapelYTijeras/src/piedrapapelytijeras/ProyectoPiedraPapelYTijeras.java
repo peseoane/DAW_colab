@@ -1,5 +1,6 @@
 package piedrapapelytijeras;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -11,6 +12,7 @@ import java.util.Scanner;
  */
 
 public class ProyectoPiedraPapelYTijeras {
+
 
     /**
      * @param player   loads the byte for the row value [0:paper,1:scissors,2:rock]
@@ -25,12 +27,17 @@ public class ProyectoPiedraPapelYTijeras {
          * This matrix takes into account all the possible scenarios that can occur
          * during the game.
          */
-
+        // if (!godmode){
         final byte[][] whoWin = {
                 {1, 2, 0},
                 {0, 1, 2},
-                {2, 0, 1}
-        };
+                {2, 0, 1}};
+        // } else {
+        // final byte[][] whoWinCheat = {
+        //        {2, 0, 1},
+        //        {1, 2, 0},
+        //        {0, 1, 2}};
+        //}
 
         return whoWin[player][computer];
 
@@ -43,6 +50,7 @@ public class ProyectoPiedraPapelYTijeras {
      */
 
     public static void main(String[] args) {
+
 
         // TODO Those strings should be a class...
 
@@ -95,6 +103,7 @@ public class ProyectoPiedraPapelYTijeras {
                         case 0, 2 ->
                                 pcAction = 1; // TIL this... for my taste is hard to read, but I don't like JetBrains warnings...
                         case 1 -> pcAction = 2;
+
                     }
 
                     System.out.printf("%s\nCHEAT STATUS: %b%s\n", ANSI_RED, true, ANSI_RESET); // intelliJ hates not using constant when possible...
