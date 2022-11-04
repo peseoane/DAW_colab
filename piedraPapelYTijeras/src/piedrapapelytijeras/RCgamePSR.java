@@ -63,14 +63,14 @@ class gameRule {
 }
 
 class exitGame {
-    private boolean loopGame = true;
     private byte scorePlayer;
     private byte scorePc;
-    private String exitGame;
 
     Scanner input = new Scanner(System.in);
 
     public boolean playAgain() {
+        boolean loopGame = true;
+        final String exitGame;
         if (scorePlayer >= 3 || scorePc >= 3) {
             System.out.println("Play again? Y/N");
             exitGame = input.nextLine();
