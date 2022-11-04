@@ -4,27 +4,34 @@ import javax.print.DocFlavor;
 import java.util.Locale;
 import java.util.Scanner;
 
-public class RCgamePSR {
-    public static void main(String[] args) {
+class exitGame {
+    private boolean loopGame = true;
+    private byte scorePlayer;
+    private byte scorePc;
+    private String exitGame;
 
-        // create a new locale
-        Locale locale1 = new Locale("en", "US", "WIN");
+    Scanner input = new Scanner(System.in);
 
-        // print locale
-        System.out.println("Locale:" + locale1);
-
-        // set another default locale
-        Locale.setDefault(new Locale("es", "ES"));
-
-        // create a new locale based on new default settings
-        Locale locale2 = Locale.getDefault();
-
-        // print the new locale
-        System.out.println("Locale::" + locale2);
-
-        Scanner prueba = new Scanner(System.in);
-        String prueba1 = prueba.nextLine();
-        System.out.println(prueba1);
+    public boolean playAgain() {
+        if (scorePlayer >= 3 || scorePc >= 3) {
+            System.out.println("Play again? Y/N");
+            exitGame = input.nextLine();
+            if (exitGame.equalsIgnoreCase("n")) {
+                System.err.println("\n### HALT ###");
+                loopGame = false;
+                input.close();
+            } else {
+                System.out.println("\n### NEW GAME ###\n");
+                scorePlayer = 0;
+                scorePc = 0;
+            }
+        }
+        return loopGame;
     }
 }
 
+public class RCgamePSR {
+    public static void main(String[] args) {
+
+    }
+}
