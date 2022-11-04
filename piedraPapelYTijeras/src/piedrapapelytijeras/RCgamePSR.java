@@ -18,6 +18,7 @@ class gameRule {
 
     /**
      * Returns a byte from the matrix,
+     * 
      * @param playerAction
      * @param pcAction
      * @param godMode
@@ -32,10 +33,13 @@ class gameRule {
     }
 
     /**
-     * This generates a random true or false to enable the cheat mode for the PC, but only if the player is winning,
-     * also this condicition isn't always true and it's random generated (1/2 chance).
+     * This generates a random true or false to enable the cheat mode for the PC,
+     * but only if the player is winning,
+     * also this condicition isn't always true and it's random generated (1/2
+     * chance).
+     * 
      * @param playerScore Byte that reads the player score.
-     * @param pcScore Byte that reads the pc score.
+     * @param pcScore     Byte that reads the pc score.
      * @return Return the status of the cheat (boolean)
      */
     public boolean godMode(byte playerScore, byte pcScore) {
@@ -85,9 +89,24 @@ class exitGame {
         }
         return loopGame;
     }
-};
+}
+
+class menu {
+    final String encoding = "ISO-8859-1";
+    final String ANSI_RESET = "\u001B[0m";
+    final String ANSI_RED = "\u001B[31m";
+    final String ANSI_GREEN = "\u001B[32m";
+    final String ANSI_PURPLE = "\u001B[35m";
+    final String mainDialog = """
+            ### ROCK PAPER SCISSORS! ###
+            It's your turn, what do you choose?
+            0 - Rock.
+            1 - Paper.
+            2 - Scissors.
+            """;
+}
 
 public class RCgamePSR {
-        public static void main(String[] args) {
-        }
+    public static void main(String[] args) {
     }
+}
