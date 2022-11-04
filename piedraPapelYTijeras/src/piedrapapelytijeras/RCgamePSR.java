@@ -4,32 +4,22 @@ import java.util.Scanner;
 
 class gameRule {
 
-    final byte[][] whoWin = {
-            { 1, 2, 0 },
-            { 0, 1, 2 },
-            { 2, 0, 1 }
-    };
-
-    final byte[][] whoWinCheat = {
-            { 2, 0, 1 },
-            { 1, 2, 0 },
-            { 0, 1, 2 }
-    };
-
     /**
-     * Returns a byte from the matrix,
-     * 
-     * @param playerAction
-     * @param pcAction
-     * @param godMode
-     * @return
+     * Returns a byte from the matrix, paper
+     * @param playerAction loads the byte for the row value [0:paper,1:scissors,2:rock]
+     * @param pcAction loads the byte for the column value
+     *      *                 [0:paper,1:scissors,2:rock]
+     * @return a byte with a byte, 0: wins the PC, 1: DRAW and 2: wins the player
      */
-    public byte winner(byte playerAction, byte pcAction, boolean godMode) {
+    public byte winner(byte playerAction, byte pcAction) {
 
-        if (godMode)
-            return whoWin[playerAction][pcAction];
-        else
-            return whoWinCheat[playerAction][pcAction];
+        final byte[][] whoWin = {
+                { 1, 2, 0 },
+                { 0, 1, 2 },
+                { 2, 0, 1 }
+        };
+
+        return whoWin[playerAction][pcAction];
     }
 
     /**
@@ -51,17 +41,18 @@ class gameRule {
 
     }
 
-    public byte pcAction(byte playerAction, boolean godMode) {
+    private byte pcAction(byte playerAction, boolean godMode) {
 
         byte pcAction = 0;
 
-        switch (playerAction) {
-            case 0, 2 -> pcAction = 1;
-            case 1 -> pcAction = 2;
+        if (godMode) {
+            switch (playerAction) {
+                case 0, 2 -> pcAction = 1;
+                case 1 -> pcAction = 2;
+            }
         }
-
-        return pcAction;
-
+        else pcAction = (byte) (new java.util.Random().nextInt(3));
+        return  pcAction;
     }
 }
 
