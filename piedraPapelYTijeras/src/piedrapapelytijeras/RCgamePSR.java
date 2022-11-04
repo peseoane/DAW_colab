@@ -1,17 +1,19 @@
 package piedrapapelytijeras;
 
-class gameRule{
+import java.util.Scanner;
+
+class gameRule {
 
     final byte[][] whoWin = {
-            {1, 2, 0},
-            {0, 1, 2},
-            {2, 0, 1}
+            { 1, 2, 0 },
+            { 0, 1, 2 },
+            { 2, 0, 1 }
     };
 
     final byte[][] whoWinCheat = {
-            {2, 0, 1},
-            {1, 2, 0},
-            {0, 1, 2}
+            { 2, 0, 1 },
+            { 1, 2, 0 },
+            { 0, 1, 2 }
     };
 
     /**
@@ -21,10 +23,12 @@ class gameRule{
      * @param godMode
      * @return
      */
-    public byte winner (byte playerAction, byte pcAction, boolean godMode) {
+    public byte winner(byte playerAction, byte pcAction, boolean godMode) {
 
-        if (godMode) return whoWin[playerAction][pcAction];
-        else return whoWinCheat[playerAction][pcAction];
+        if (godMode)
+            return whoWin[playerAction][pcAction];
+        else
+            return whoWinCheat[playerAction][pcAction];
     }
 
     /**
@@ -36,12 +40,14 @@ class gameRule{
      */
     public boolean godMode(byte playerScore, byte pcScore) {
 
-        if (playerScore > pcScore) return new java.util.Random().nextBoolean();
-        else return false;
+        if (playerScore > pcScore)
+            return new java.util.Random().nextBoolean();
+        else
+            return false;
 
     }
 
-    public byte pcAction(byte playerAction,boolean godMode){
+    public byte pcAction(byte playerAction, boolean godMode) {
 
         byte pcAction = 0;
 
@@ -52,10 +58,8 @@ class gameRule{
 
         return pcAction;
 
+    }
 }
-
-public class RCgamePSR {
-    public static void main(String[] args) {
 
 class exitGame {
     private boolean loopGame = true;
@@ -81,10 +85,9 @@ class exitGame {
         }
         return loopGame;
     }
-}
+};
 
 public class RCgamePSR {
-    public static void main(String[] args) {
-
+        public static void main(String[] args) {
+        }
     }
-}
