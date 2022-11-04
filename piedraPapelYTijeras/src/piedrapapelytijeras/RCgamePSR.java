@@ -41,6 +41,12 @@ class gameRule {
 
     }
 
+    /**
+     * If godMode is true, this will output a action that always will win
+     * @param playerAction
+     * @param godMode
+     * @return
+     */
     private byte pcAction(byte playerAction, boolean godMode) {
 
         byte pcAction = 0;
