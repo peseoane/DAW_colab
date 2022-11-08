@@ -1,9 +1,13 @@
-import game
-
+import Game
 
 def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+    pc = Game.player("pedro",1,2)
+    print(Game.player.showStats(pc))
+
+    Game.player.addWinner(pc)
+
+    print(Game.player.showStats(pc))
 
     pc = game.Player(
         "pc",
@@ -17,4 +21,5 @@ def print_hi(name):
 
 
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print_hi('1,2,3,4...')
+
