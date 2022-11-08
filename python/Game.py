@@ -38,11 +38,11 @@ class player:
             [2, 0, 1]
         ]
 
-        if winTable[player.selecion][npc.selection] == 0:
-            player.score += 1
-            return player, npc
-        elif winTable[player.selecion][npc.selection] == 1:
-            return player, npc
-        else:
-            npc.score += 1
-            return player, npc
+        match winTable[player.selecion][npc.selection]:
+            case 0:
+                player.score += 1
+                return player, npc
+            case 2:
+                npc.score += 1
+        
+        return player, npc
