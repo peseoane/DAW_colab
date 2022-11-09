@@ -56,14 +56,7 @@ public class GameT {
         return whoWin[playerAction][pcAction];
     }
 
-    public boolean godMode(byte playerScore, byte pcScore) {
-
-        if (playerScore > pcScore)
-            return new java.util.Random().nextBoolean();
-        else
-            return false;
-
-    }
+    
 
     private byte pcAction(byte playerAction, boolean godMode) {
 
@@ -99,4 +92,4 @@ public class GameT {
             }
         }
     }
-}
+ }
