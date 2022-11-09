@@ -1,6 +1,8 @@
 package piedrapapelytijeras;
 
 import java.util.Scanner;
+import piedrapapelytijeras.Game;
+import piedrapapelytijeras.Loops;
 
 /**
  * PAPER SCISSORS ROCK!
@@ -21,7 +23,7 @@ public class AppPiedraPapelYTijera {
         byte pcAction = 0;
         String exitGame;
 
-        Scanner input = new Scanner(System.in, encoding);
+        Scanner input = new Scanner(System.in, "ISO-8859-1");
 
         /*
          * Due to be a simple CLI game, we just enter on the main point with a loop,
