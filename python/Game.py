@@ -30,7 +30,7 @@ class player:
 
         # return [self.id,self.name, self.points,self.score]
 
-    def judge(player: object, npc: object, godMode: bool) -> object:
+    def judge(player: object, npc: object) -> object:
         
         winTable = [
             [1, 2, 0],

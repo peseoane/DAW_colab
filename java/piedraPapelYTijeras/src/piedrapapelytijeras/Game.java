@@ -9,8 +9,7 @@ class Game {
      *      *                 [0:paper,1:scissors,2:rock]
      * @return a byte with a byte, 0: wins the PC, 1: DRAW and 2: wins the player
      */
-    public byte winner(byte playerAction, byte pcAction) {
-
+    public byte winner(byte playerAction,byte pcAction) 
         final byte[][] whoWin = {
                 { 1, 2, 0 },
                 { 0, 1, 2 },
@@ -30,14 +29,7 @@ class Game {
      * @param pcScore     Byte that reads the pc score.
      * @return Return the status of the cheat (boolean)
      */
-    public boolean godMode(byte playerScore, byte pcScore) {
-
-        if (playerScore > pcScore)
-            return new java.util.Random().nextBoolean();
-        else
-            return false;
-
-    }
+    
 
     /**
      * If godMode is true, this will output a action that always will win
