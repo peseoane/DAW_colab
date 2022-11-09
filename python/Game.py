@@ -7,7 +7,7 @@ class player:
         if not isinstance(name,str):
             raise TypeError("Debe ser una cadena")
 
-        self.name = name
+        self.name = "name"
         self.points = int(0)
         self.score = int(0)
         self.id += int(1)
