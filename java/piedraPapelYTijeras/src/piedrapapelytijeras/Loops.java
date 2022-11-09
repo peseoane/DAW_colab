@@ -8,7 +8,7 @@ class Loops {
 
     Scanner input = new Scanner(System.in);
 
-    public boolean playAgain() {
+    public void playAgain() {
         boolean loopGame = true;
         final String exitGame;
         if (scorePlayer >= 3 || scorePc >= 3) {
@@ -24,7 +24,6 @@ class Loops {
                 scorePc = 0;
             }
         }
-        return loopGame;
     }
 }
 

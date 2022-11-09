@@ -23,6 +23,8 @@ public class AppPiedraPapelYTijera {
         byte pcAction = 0;
         String exitGame;
 
+        
+
         Scanner input = new Scanner(System.in, "ISO-8859-1");
 
         /*
