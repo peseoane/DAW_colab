@@ -1,6 +1,5 @@
 package piedrapapelytijeras;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -11,62 +10,9 @@ import java.util.Scanner;
  * @version 0.3
  */
 
-public class ProyectoPiedraPapelYTijeras {
-
-
-    /**
-     * @param player   loads the byte for the row value [0:paper,1:scissors,2:rock]
-     * @param computer loads the byte for the column value
-     *                 [0:paper,1:scissors,2:rock]
-     *                 table with a 100% win chance.
-     * @return a byte with a byte, 0: wins the PC, 1: DRAW and 2: wins the player
-     */
-    static byte whoWin(byte player, byte computer) {
-
-        /*
-         * This matrix takes into account all the possible scenarios that can occur
-         * during the game.
-         */
-        // if (!godmode){
-        final byte[][] whoWin = {
-                {1, 2, 0},
-                {0, 1, 2},
-                {2, 0, 1}};
-        // } else {
-        // final byte[][] whoWinCheat = {
-        //        {2, 0, 1},
-        //        {1, 2, 0},
-        //        {0, 1, 2}};
-        //}
-
-        return whoWin[player][computer];
-
-    }
-
-    /**
-     * Launch's the game, it's uses an exception just in case of bad user input...
-     * could be improved
-     * TODO due to hard possible debugging...
-     */
-
+public class AppPiedraPapelYTijera {
     public static void main(String[] args) {
-
-
-        // TODO Those strings should be a class...
-
-        final String encoding = "ISO-8859-1";
-        final String ANSI_RESET = "\u001B[0m";
-        final String ANSI_RED = "\u001B[31m";
-        final String ANSI_GREEN = "\u001B[32m";
-        final String ANSI_PURPLE = "\u001B[35m";
-        final String mainDialog = """
-                ### PAPER SCISSORS ROCK! ###
-                It's your turn, what do you choose?
-                0 - Rock.
-                1 - Paper.
-                2 - Scissors.
-                """;
-
+        
         boolean loopGame = true;
         boolean godMode; // It will load sometimes...
         byte scorePlayer = 0;
