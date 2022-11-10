@@ -12,6 +12,7 @@ public class Game {
     private byte player2;
     private byte points;
     private byte wins;
+    
 
     // Constructor
     
@@ -53,7 +54,7 @@ public class Game {
         System.out.println("----------------");
     }
 
-    public byte getWinner(,) {
+    public byte getWinner(Player.playerAction, Pc.pcAction) {
         final byte[][] whoWin = {
                 { 1, 2, 0 },
                 { 0, 1, 2 },
@@ -61,6 +62,33 @@ public class Game {
         };
 
         return whoWin[playerAction][pcAction];
+    }
+
+    public byte addPoints() {
+        switch (whoWin(Player.playerAction, Pc.pcAction)) {
+            case 0 -> {
+                Player.scorePlayer++;
+                System.out.printf("""
+                                %sThe player has won this round...
+                                PLAYER [%d][%d]
+                                %s
+                                """,
+                        ANSI_GREEN, Player.scorePlayer, Player.scorePc, ANSI_RESET);
+            }
+            case 1 -> System.out.printf("""
+                            %sDraw...
+                            PLAYER [%d][%d]
+                            %s""",
+                    ANSI_PURPLE, Player.scorePlayer, Player.scorePc, ANSI_RESET);
+            case 2 -> {
+                Player.scorePc++;
+                System.out.printf("""
+                                %sThe computer has won this round...
+                                PLAYER [%d][%d]
+                                %s""",
+                        ANSI_RED, Player.scorePlayer, Player.scorePc, ANSI_RESET);
+            }
+        }
     }
 
     
@@ -79,24 +107,6 @@ public class Game {
         return pcAction;
     }
 
-    /*public void playAgain() {
-        private byte scorePlayer;
-        private byte scorePc;
-        Scanner input = new Scanner(System.in);
-        boolean loopGame = true;
-        final String exitGame;
-        if (scorePlayer >= 3 || scorePc >= 3) {
-            System.out.println("Play again? Y/N");
-            exitGame = input.nextLine();
-            if (exitGame.equalsIgnoreCase("n")) {
-                System.err.println("\n### HALT ###");
-                loopGame = false;
-                input.close();
-            } else {
-                System.out.println("\n### NEW GAME ###\n");
-                scorePlayer = 0;
-                scorePc = 0;
-            }
-        }
-    }*/
+
+
  }

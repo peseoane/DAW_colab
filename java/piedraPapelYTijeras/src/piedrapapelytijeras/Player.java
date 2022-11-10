@@ -4,9 +4,9 @@ import java.util.Scanner;
 public class Player {
     // Atributos
     private String name;
-    public static int playerAction;
-    private byte scorePlayer;
-    private byte scorePc;
+    public static byte playerAction;
+    public static byte scorePlayer;
+    public static byte scorePc;
 
     // Constructor
 
