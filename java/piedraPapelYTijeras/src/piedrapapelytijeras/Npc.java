@@ -1,4 +1,4 @@
-package app;
+package piedrapapelytijeras;
 
 public class Npc {
     

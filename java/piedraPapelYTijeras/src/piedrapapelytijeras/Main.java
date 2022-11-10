@@ -1,9 +1,4 @@
-package app;
-
-import app.Game;
-import app.Npc;
-import app.Player;
-import java.util.Scanner;
+package piedrapapelytijeras;
 
 public class Main {
 
