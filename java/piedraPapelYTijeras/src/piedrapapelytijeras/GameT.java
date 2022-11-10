@@ -2,6 +2,8 @@
 import java.util.Scanner;
 
 import javax.sound.sampled.SourceDataLine;
+import piedrapapelytijeras.Player;
+import piedrapapelytijeras.Pc;
 
 public class GameT {
     // Atributos
@@ -46,7 +48,7 @@ public class GameT {
         System.out.println("----------------");
     }
 
-    public byte winner(playerT, pcAction) {
+    public byte winner(Player, Pc) {
         final byte[][] whoWin = {
                 { 1, 2, 0 },
                 { 0, 1, 2 },
