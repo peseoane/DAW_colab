@@ -1,4 +1,4 @@
-
+package piedrapapelytijeras;
 import java.util.Scanner;
 
 import javax.sound.sampled.SourceDataLine;
@@ -40,9 +40,14 @@ public class GameT {
                 """;
     }
 
-    public void stats() {
+    public void stats(byte player1, byte player2) {
         System.out.println("----------------");
-        System.out.println();
+        System.out.println(player1);
+        System.out.println("Ha ganado: " + wins);
+        System.out.println("Lleva " + points + " puntos");
+        System.out.println("----------------");
+        System.out.println("----------------");
+        System.out.println(player2);
         System.out.println("Ha ganado: " + wins);
         System.out.println("Lleva " + points + " puntos");
         System.out.println("----------------");

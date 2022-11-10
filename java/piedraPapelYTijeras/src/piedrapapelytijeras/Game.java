@@ -9,7 +9,7 @@ class Game {
      *      *                 [0:paper,1:scissors,2:rock]
      * @return a byte with a byte, 0: wins the PC, 1: DRAW and 2: wins the player
      */
-    public byte winner(byte playerAction,byte pcAction) 
+    public byte winner(byte playerAction,byte pcAction)  {
         final byte[][] whoWin = {
                 { 1, 2, 0 },
                 { 0, 1, 2 },

@@ -1,8 +1,6 @@
 package piedrapapelytijeras;
 
 import java.util.Scanner;
-import piedrapapelytijeras.Game;
-import piedrapapelytijeras.Loops;
 
 /**
  * PAPER SCISSORS ROCK!
@@ -15,6 +13,19 @@ import piedrapapelytijeras.Loops;
 public class AppPiedraPapelYTijera {
     public static void main(String[] args) {
         
+        final String encoding = "ISO-8859-1";
+        final String ANSI_RESET = "\u001B[0m";
+        final String ANSI_RED = "\u001B[31m";
+        final String ANSI_GREEN = "\u001B[32m";
+        final String ANSI_PURPLE = "\u001B[35m";
+        final String mainDialog = """
+                ### ROCK PAPER SCISSORS! ###
+                It's your turn, what do you choose?
+                0 - Rock.
+                1 - Paper.
+                2 - Scissors.
+                """;
+
         boolean loopGame = true;
         boolean godMode; // It will load sometimes...
         byte scorePlayer = 0;

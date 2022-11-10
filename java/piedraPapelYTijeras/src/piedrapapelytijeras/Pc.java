@@ -1,5 +1,7 @@
 package piedrapapelytijeras;
 
+import piedrapapelytijeras.Game;
+
 public class Pc {
     // Atributos
     private boolean godMode;
