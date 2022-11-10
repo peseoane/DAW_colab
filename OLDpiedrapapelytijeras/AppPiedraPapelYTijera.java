@@ -1,4 +1,4 @@
-package piedrapapelytijeras;
+package OLDpiedrapapelytijeras;
 
 import java.util.Scanner;
 

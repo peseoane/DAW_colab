@@ -1,6 +1,4 @@
-package piedrapapelytijeras;
-
-import piedrapapelytijeras.Game;
+package OLDpiedrapapelytijeras;
 
 public class Pc {
     // Atributos

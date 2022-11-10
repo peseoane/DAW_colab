@@ -1,4 +1,4 @@
-package piedrapapelytijeras;
+package OLDpiedrapapelytijeras;
 
 class GameOLD {
 
