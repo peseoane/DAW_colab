@@ -74,7 +74,7 @@ public class GameT {
         return pcAction;
     }
 
-    public void playAgain() {
+    /*public void playAgain() {
         private byte scorePlayer;
         private byte scorePc;
         Scanner input = new Scanner(System.in);
@@ -93,5 +93,5 @@ public class GameT {
                 scorePc = 0;
             }
         }
-    }
+    }*/
  }
