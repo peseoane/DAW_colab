@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Player {
     // Atributos
     private String name;
-    private int playerAction;
+    public static int playerAction;
     private byte scorePlayer;
     private byte scorePc;
 

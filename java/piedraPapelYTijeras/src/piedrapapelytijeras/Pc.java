@@ -21,7 +21,14 @@ public class Pc {
     }
 
     private boolean cheatEnable() {
-        
+        if (godMode) {
+            switch (playerAction) {
+                case 0, 2 -> pcAction = 1;
+                case 1 -> pcAction = 2;
+            }
+        }
+        else pcAction = (byte) (new java.util.Random().nextInt(3));
+        return  pcAction;
     }
 
 }
