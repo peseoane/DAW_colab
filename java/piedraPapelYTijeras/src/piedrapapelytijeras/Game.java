@@ -1,4 +1,5 @@
 package piedrapapelytijeras;
+
 import java.util.Scanner;
 
 import javax.sound.sampled.SourceDataLine;
@@ -12,10 +13,9 @@ public class Game {
     private byte player2;
     private byte points;
     private byte wins;
-    
 
     // Constructor
-    
+
     public Game(int id, byte player1, byte player2) {
         this.id = id;
         this.player1 = player1;
@@ -26,7 +26,7 @@ public class Game {
 
     // Métodos
 
-    public void menu(){
+    public void menu() {
         final String encoding = "ISO-8859-1";
         final String ANSI_RESET = "\u001B[0m";
         final String ANSI_RED = "\u001B[31m";
@@ -69,29 +69,27 @@ public class Game {
             case 0 -> {
                 Player.scorePlayer++;
                 System.out.printf("""
-                                %sThe player has won this round...
-                                PLAYER [%d][%d]
-                                %s
-                                """,
+                        %sThe player has won this round...
+                        PLAYER [%d][%d]
+                        %s
+                        """,
                         ANSI_GREEN, Player.scorePlayer, Player.scorePc, ANSI_RESET);
             }
             case 1 -> System.out.printf("""
-                            %sDraw...
-                            PLAYER [%d][%d]
-                            %s""",
+                    %sDraw...
+                    PLAYER [%d][%d]
+                    %s""",
                     ANSI_PURPLE, Player.scorePlayer, Player.scorePc, ANSI_RESET);
             case 2 -> {
                 Player.scorePc++;
                 System.out.printf("""
-                                %sThe computer has won this round...
-                                PLAYER [%d][%d]
-                                %s""",
+                        %sThe computer has won this round...
+                        PLAYER [%d][%d]
+                        %s""",
                         ANSI_RED, Player.scorePlayer, Player.scorePc, ANSI_RESET);
             }
         }
     }
-
-    
 
     private byte pcAction(byte playerAction, boolean godMode) {
 
@@ -107,6 +105,4 @@ public class Game {
         return pcAction;
     }
 
-
-
- }
+}
