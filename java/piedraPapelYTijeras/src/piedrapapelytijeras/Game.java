@@ -53,7 +53,7 @@ public class Game {
         System.out.println("----------------");
     }
 
-    public byte winner(Player.playerAction,  Pc) {
+    public byte getWinner(,  Pc) {
         final byte[][] whoWin = {
                 { 1, 2, 0 },
                 { 0, 1, 2 },
