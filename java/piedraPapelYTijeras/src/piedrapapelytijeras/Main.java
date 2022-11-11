@@ -14,38 +14,40 @@ public class Main {
         player.playerName();
         System.out.printf("Hola %s\n", player.getName());
         Npc npc = new Npc();
-
+        Scanner input = new Scanner(System.in, Colour.ENCODING);
         while (loopGame) {
+                            player.playerChoice();
+                npc.calculateAction(player);
+                Game.calculateWinner(player, npc);
+                Game.showElection(player, npc);
+                System.out.println(Colour.RED + "Cheat status: " + npc.isGodMode() + Colour.RESET);
+                System.out.println("Press any key to continue...");
+                input.nextLine();
+                if (player.getLocalScore() >= 3 || npc.getLocalScore() >= 3) {
+                    System.out.println("Play again? N to exit, press any key to continue");
 
-            player.playerChoice();
-            npc.calculateAction(player);
-            Game.returnWinner(player, npc);
-            Game.showElection(player, npc);
-            System.out.println(Colour.RED + "Cheat status: " + npc.isGodMode() + Colour.RESET);
+                    exitGame = input.nextLine();
 
-            if (player.getLocalScore() >= 3 || npc.getLocalScore() >= 3) {
-                System.out.println("Play again? N to exit, press any key to continue");
-                Scanner input = new Scanner(System.in, Colour.ENCODING);
-                exitGame = input.nextLine();
+                    if (exitGame.equalsIgnoreCase("n")) {
+                        System.err.println("\n### HALT ###");
+                        loopGame = false;
+                        input.close();
 
-                if (exitGame.equalsIgnoreCase("n")) {
-                    System.err.println("\n### HALT ###");
-                    loopGame = false;
-                    input.close();
-
-                } else {
-                    System.out.println("\n### NEW GANE ###\n");
-                    if (player.getLocalScore() >= 3) {
-                        player.addGlobalScore();
                     } else {
-                        npc.addGlobalScore();
-                    }
-                    player.setLocalScore(0);
-                    npc.setLocalScore(0);
-                }
+                        System.out.println("\n### NEW GANE ###\n");
+                        if (player.getLocalScore() >= 3) {
+                            player.addGlobalScore();
+                        } else {
+                            npc.addGlobalScore();
+                        }
+                        player.setLocalScore(0);
+                        npc.setLocalScore(0);
+                    }}
+
+
+
             }
 
 
         }
     }
-}

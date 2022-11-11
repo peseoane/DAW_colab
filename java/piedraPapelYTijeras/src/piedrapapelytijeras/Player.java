@@ -1,6 +1,7 @@
 package piedrapapelytijeras;
 
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Player {
 
@@ -75,8 +76,17 @@ public class Player {
     }
 
     public void playerChoice() {
-        System.out.println(Colour.DIALOG);
-        action = input.nextInt();
-    }
 
+        boolean loopKeyboardError = true;
+        final int[] allowedValues = {0, 1, 3};
+
+        System.out.println(Colour.DIALOG);
+
+        if (input.hasNextInt())
+            action = input.nextInt();
+                if (allowedValues.contains(action)){
+            System.out.println("yes");
+        }
+    }
 }
+

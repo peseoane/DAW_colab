@@ -3,7 +3,7 @@ package piedrapapelytijeras;
 
 public class Game {
 
-        public static void returnWinner(Player player, Npc npc) {
+        public static void calculateWinner(Player player, Npc npc) {
 
                 final int[][] winTable = {
                         {1, 2, 0},
@@ -13,27 +13,29 @@ public class Game {
 
                 switch (winTable[player.getAction()][npc.getAction()]) {
                         case 0 -> {
+                                player.addWin();
                                 System.out.printf("""
                                                 %sThe player has won this round...
-                                                PLAYER [%d][%d]
+                                                PLAYER [%d][%d] NPC
                                                 %s
                                                 """,
                                         Colour.PURPLE, player.getLocalScore(), npc.getLocalScore(),
                                         Colour.RESET);
-                                player.addWin();
+
                         }
                         case 1 -> System.out.printf("""
                                         %sDraw...
-                                        PLAYER [%d][%d]
+                                        PLAYER [%d][%d] NPC
                                         %s""",
                                 Colour.PURPLE, player.getLocalScore(), npc.getLocalScore(), Colour.RESET);
                         case 2 -> {
+                                npc.addWin();
                                 System.out.printf("""
                                                 %sThe computer has won this round...
-                                                PLAYER [%d][%d]
+                                                PLAYER [%d][%d] NPC
                                                 %s""",
                                         Colour.RED, player.getLocalScore(), npc.getLocalScore(), Colour.RESET);
-                                npc.addWin();
+
                         }
                 }
         }
