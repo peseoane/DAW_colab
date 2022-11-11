@@ -11,7 +11,7 @@ public class Player {
     private int action;
     // @amelych he eliminado el que sea estático porque no tiene sentido, las
     // puntuaciones y nombre tendrán sentido cuando cree el objeto, no es algo
-    // inherente a la clase, si no al objeto en concreto.
+    // inherente a la clase, sino al objeto en concreto.
     private int localScore;
     // public byte scorePc;
     // ^ Esto debería ir en NPC
@@ -22,7 +22,7 @@ public class Player {
 
 
     public Player() {
-        this.name = null; // ¿Esto es correcto? ¿Debería poner ""?
+        this.name = null; // ¿Esto es correcto? ¿Debería poner""?
         this.action = 0;
         this.localScore = 0;
         this.globalScore = 0;
@@ -33,7 +33,7 @@ public class Player {
         return name;
     }
 
-    // InteliJ es bastante bueno eliminando cosas no usadas
+    // IntelliJ es bastante bueno eliminando cosas no usadas
     // --Commented out by Inspection START (11/11/2022 19:15):
     // public void setName(String name) {
     // this.name = name;
@@ -74,7 +74,7 @@ public class Player {
         this.localScore++;
     }
 
-    // Está ofuscado apropósito por la broma! Obviamente no hacemos las cosas así.
+    // ¡Está ofuscado apropósito por la broma! Obviamente, no hacemos las cosas así.
     public void playerName() {
 
         System.out.println("Introduce tu nombre: ");
@@ -91,7 +91,7 @@ public class Player {
      */
     public void playerChoice() {
 
-        // Sólo podemos aceptar 0 1 o 2
+        // Solo podemos aceptar 0 1 o 2
         boolean loopKeyboardError;
         int numAction;
         String election;
@@ -112,10 +112,10 @@ public class Player {
                     setAction(numAction);
                     loopKeyboardError = false;
                 } else {
-                    // Que no? Se lo decimos amablemente al usuario...
+                    // ¿Qué no? Se lo decimos amablemente al usuario...
                     // @amelych fíjate que excepciones puedes definir una o coger una que se ajuste
                     // al error que tienes y te ahorras clear la clase... el mensaje lo puedes pasar
-                    // entre los corchetes pero prefiero hacerlo debajo cuando las capture
+                    // entre los corchetes, pero prefiero hacerlo debajo cuando las capture
                     throw new ArrayIndexOutOfBoundsException();
                 }
 

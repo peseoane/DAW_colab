@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="-342.5" y="343.5">piedrapapelytijeras.Main</node>
+    <node x="-161.5" y="310.5">piedrapapelytijeras.Game</node>
+    <node x="-352.0" y="-138.5">piedrapapelytijeras.Player</node>
+    <node x="-146.0" y="-160.5">piedrapapelytijeras.Npc</node>
+    <node x="72.5" y="-16.5">piedrapapelytijeras.Colour</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="piedrapapelytijeras.Main" target="piedrapapelytijeras.Player" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="160.5" />
+    </edge>
+    <edge source="piedrapapelytijeras.Main" target="piedrapapelytijeras.Npc" relationship="CREATE">
+      <point x="0.0" y="-38.5" />
+      <point x="-266.0" y="282.0" />
+      <point x="-46.0" y="282.0" />
+      <point x="0.0" y="182.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0409448818897638" showDependencies="true" x="-48.0" y="156.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

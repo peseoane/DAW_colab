@@ -1,7 +1,7 @@
 package piedrapapelytijeras;
 
 public class Colour {
-    // caracteres de escape, en terminales modernas al mostrar esas cadenas al principi de cada texto, cambian el color, el reset lo reinicia al default del terminal, y dejo el menú aquí para no emborronar.
+    // caracteres de escape, en terminales modernas al mostrar esas cadenas al principal de cada texto, cambian el color, el reset lo reinicia al default del terminal, y dejo el menú aquí para no emborronar.
     public static final String ENCODING = "ISO-8859-1";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
