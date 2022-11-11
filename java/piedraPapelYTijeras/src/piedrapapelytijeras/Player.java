@@ -47,10 +47,8 @@ public class Player {
     }
 
     public void addWin() {
-        this.localScore += 1;
-        if (this.localScore >=3) {
-            this.globalScore += 1;
-        };
+        localScore += 1;
+    };
 
     static Scanner input = new Scanner(System.in);
 

@@ -1,7 +1,9 @@
 package piedrapapelytijeras;
 
+import Colour;
+
 public class Game {
-    
+
     public void returnWinner(Player player, Npc npc) {
 
         final int[][] winTable = {
@@ -10,28 +12,28 @@ public class Game {
                 { 2, 0, 1 }
         };
 
-        switch (whoWin(playerAction, pcAction)) {
+        switch (winTable[player.getAction()][npc.getAction()]) {
                     case 0 -> {
-                        ;
                         System.out.printf("""
                                         %sThe player has won this round...
                                         PLAYER [%d][%d]
                                         %s
                                         """,
-                                ANSI_GREEN, scorePlayer, scorePc, ANSI_RESET);
+                                Colour.PURPLE, player.getLocalScore(), npc.getLocalScore(), Colour.RESET);
+                        player.addWin();
                     }
                     case 1 -> System.out.printf("""
                                     %sDraw...
                                     PLAYER [%d][%d]
                                     %s""",
-                            ANSI_PURPLE, scorePlayer, scorePc, ANSI_RESET);
+                            Colour.PURPLE, player.getLocalScore(),npc.getLocalScore(), Colour.RESET);
                     case 2 -> {
-                        scorePc++;
                         System.out.printf("""
                                         %sThe computer has won this round...
                                         PLAYER [%d][%d]
                                         %s""",
-                                ANSI_RED, scorePlayer, scorePc, ANSI_RESET);
-                    }
+                                Colour.RED, player.getLocalScore(), npc.getLocalScore(), Colour.RESET);
+                                npc.addWin();
+                        }
     }   
 }

@@ -1,24 +1,29 @@
 package piedrapapelytijeras;
 
-import javax.sound.midi.Soundbank;
+import Player;
+import Npc;
+import Game;
+import Colour;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("""
-                        ##### PAPER, SCISSORS, ROCK! #####
-                        """);
-                        
+        boolean loopGame = true;
 
+        System.out.println(Colour.mainDialog);
+                        
         // Creamos el objeto del jugador
-        Player player = new Player();
+        Player player = new Player();  
         player.playerName();        
         System.out.printf("Hola %s", player.name);
-        player.playerChoice();
         Npc npc = new Npc();
-        Game game = new Game(player,npc);     
 
+        while (loopGame) {
+
+            player.playerChoice(); 
+            Game.returnWinner(player, npc);
+        }
     }
 
 }
