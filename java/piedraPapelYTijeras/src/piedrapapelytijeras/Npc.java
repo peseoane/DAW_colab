@@ -5,7 +5,7 @@ public class Npc {
     private String name;
     private int action;
     public int localScore;
-    private int totalScore;
+    private int globalScore;
     private boolean godMode;
 
     public String getName() {
@@ -28,12 +28,16 @@ public class Npc {
         this.localScore = localScore;
     }
 
-    public int getTotalScore() {
-        return totalScore;
+    public int getGlobalScore() {
+        return globalScore;
     }
 
-    public void setTotalScore(int totalScore) {
-        this.totalScore = totalScore;
+    public void addGlobalScore(){
+        this.globalScore += 1;
+    }
+
+    public void setGlobalScore(int globalScore) {
+        this.globalScore = globalScore;
     }
 
     public boolean isGodMode() {
@@ -42,6 +46,11 @@ public class Npc {
     
     public void setGodMode(boolean godMode) {
         this.godMode = godMode;
+    }
+
+    public boolean createGodMode(){
+        this.godMode = new java.util.Random().nextBoolean();
+        return this.godMode;
     }
 
     public void addWin() {
@@ -55,12 +64,12 @@ public class Npc {
         this.name = "PC";
         this.action = 0;
         this.localScore = 0;
-        this.totalScore = 0;
+        this.globalScore = 0;
         this.godMode = false;
     }
 
     public void action(Player player) {
-        if (player.getLocalScore() > getLocalScore() && getGodMode(setGodMode(new java.util.Random().nextBoolean()))) {
+        if (createGodMode() && getLocalScore() > getLocalScore()) {
             switch (player.getAction()) {
                 case 0, 2 -> setAction(1);
                 case 1 -> setAction(2);

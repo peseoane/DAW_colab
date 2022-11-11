@@ -46,6 +46,10 @@ public class Player {
         this.globalScore = globalScore;
     }
 
+    public void addGlobalScore(){
+        this.globalScore += 1;
+    }
+
     public void addWin() {
         localScore += 1;
     };
