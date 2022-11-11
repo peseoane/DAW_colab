@@ -51,8 +51,8 @@ public class Player {
     }
 
     public void addWin() {
-        localScore += 1;
-    };
+        localScore++;
+    }
 
     static Scanner input = new Scanner(System.in);
 

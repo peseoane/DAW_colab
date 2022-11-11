@@ -20,6 +20,7 @@ public class Main {
             player.playerChoice();
             npc.calculateAction(player);
             Game.returnWinner(player, npc);
+            Game.showElection(player, npc);
             System.out.println(Colour.RED + "Cheat status: " + npc.isGodMode() + Colour.RESET);
 
             if (player.getLocalScore() >= 3 || npc.getLocalScore() >= 3) {
