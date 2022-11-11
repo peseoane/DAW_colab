@@ -75,12 +75,7 @@ public class Player {
     }
 
     public void playerChoice() {
-        System.out.println("""
-                Introduce tu jugada:
-                0 - Piedra
-                1 - Papel
-                2 - Tijera
-                """);
+        System.out.println(Colour.DIALOG);
         action = input.nextInt();
     }
 

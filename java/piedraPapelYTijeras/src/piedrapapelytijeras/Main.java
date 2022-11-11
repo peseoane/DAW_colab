@@ -7,25 +7,24 @@ public class Main {
     public static void main(String[] args) {
 
         boolean loopGame = true;
+        String exitGame;
 
-        System.out.println(Colour.DIALOG);
-                        
         // Creamos el objeto del jugador
-        Player player = new Player();  
-        player.playerName();        
-        System.out.printf("Hola %s", player.getName());
+        Player player = new Player();
+        player.playerName();
+        System.out.printf("Hola %s\n", player.getName());
         Npc npc = new Npc();
 
+        while (loopGame) {
 
-        String exitGame;
-        while (loopGame) ;
-
-            player.playerChoice(); 
+            player.playerChoice();
+            npc.calculateAction(player);
             Game.returnWinner(player, npc);
+            System.out.println(Colour.RED + "Cheat status: " + npc.isGodMode() + Colour.RESET);
 
             if (player.getLocalScore() >= 3 || npc.getLocalScore() >= 3) {
-                System.out.println("Play again? Y/N");
-                Scanner input = new Scanner(System.in,Colour.ENCODING);
+                System.out.println("Play again? N to exit, press any key to continue");
+                Scanner input = new Scanner(System.in, Colour.ENCODING);
                 exitGame = input.nextLine();
 
                 if (exitGame.equalsIgnoreCase("n")) {
@@ -35,18 +34,17 @@ public class Main {
 
                 } else {
                     System.out.println("\n### NEW GANE ###\n");
-                    if (player.getLocalScore() >= 3){
+                    if (player.getLocalScore() >= 3) {
                         player.addGlobalScore();
+                    } else {
+                        npc.addGlobalScore();
                     }
-                    else {npc.addGlobalScore();}
                     player.setLocalScore(0);
                     npc.setLocalScore(0);
-                    loopGame = false;
                 }
             }
 
 
         }
     }
-
 }

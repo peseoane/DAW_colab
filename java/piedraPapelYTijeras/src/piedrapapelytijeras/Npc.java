@@ -68,7 +68,7 @@ public class Npc {
         this.godMode = false;
     }
 
-    public void action(Player player) {
+    public void calculateAction(Player player) {
         if (createGodMode() && getLocalScore() > getLocalScore()) {
             switch (player.getAction()) {
                 case 0, 2 -> setAction(1);

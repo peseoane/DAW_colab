@@ -37,4 +37,17 @@ public class Game {
                         }
                 }
         }
+
+        public static void printStats(Player player, Npc npc){
+                switch (player.getAction()){
+                        case 0 -> System.out.println(player.getName() + "escoge piedra");
+                        case 1 -> System.out.println(player.getName() + "escoge paper");
+                        case 2 -> System.out.println(player.getName() + "escoge tijera");
+                }
+                switch (npc.getAction()){
+                        case 1 -> System.out.println(npc.getName() + "escoge paper");
+                        case 2 -> System.out.println(npc.getName() + "escoge tijera");
+                        case 0 -> System.out.println(npc.getName() + "escoge piedra");
+                }
+        }
 }
