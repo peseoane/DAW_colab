@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class AppPiedraPapelYTijera {
     public static void main(String[] args) {
-        
+
         final String encoding = "ISO-8859-1";
         final String ANSI_RESET = "\u001B[0m";
         final String ANSI_RED = "\u001B[31m";
@@ -34,8 +34,6 @@ public class AppPiedraPapelYTijera {
         byte pcAction = 0;
         String exitGame;
 
-        
-
         Scanner input = new Scanner(System.in, "ISO-8859-1");
 
         /*
@@ -55,19 +53,23 @@ public class AppPiedraPapelYTijera {
                 input.nextLine();
                 godMode = new java.util.Random().nextBoolean();
 
-                // Sometimes, if the computer is loosing, and the random boolean it's true, it will cheat on you!
+                // Sometimes, if the computer is loosing, and the random boolean it's true, it
+                // will cheat on you!
                 if (godMode && (scorePlayer > scorePc)) {
                     /*
                      * We assign the pcAction to always wins to the player!
                      */
                     switch (playerAction) {
                         case 0, 2 ->
-                                pcAction = 1; // TIL this... for my taste is hard to read, but I don't like JetBrains warnings...
+                            pcAction = 1; // TIL this... for my taste is hard to read, but I don't like JetBrains
+                                          // warnings...
                         case 1 -> pcAction = 2;
 
                     }
 
-                    System.out.printf("%s\nCHEAT STATUS: %b%s\n", ANSI_RED, true, ANSI_RESET); // intelliJ hates not using constant when possible...
+                    System.out.printf("%s\nCHEAT STATUS: %b%s\n", ANSI_RED, true, ANSI_RESET); // intelliJ hates not
+                                                                                               // using constant when
+                                                                                               // possible...
                 } else {
                     pcAction = (byte) (new java.util.Random().nextInt(3));
                     System.out.printf("%s\nCHEAT STATUS: %b%s\n", ANSI_GREEN, false, ANSI_RESET);
@@ -83,23 +85,23 @@ public class AppPiedraPapelYTijera {
                     case 0 -> {
                         scorePlayer++;
                         System.out.printf("""
-                                        %sThe player has won this round...
-                                        PLAYER [%d][%d]
-                                        %s
-                                        """,
+                                %sThe player has won this round...
+                                PLAYER [%d][%d]
+                                %s
+                                """,
                                 ANSI_GREEN, scorePlayer, scorePc, ANSI_RESET);
                     }
                     case 1 -> System.out.printf("""
-                                    %sDraw...
-                                    PLAYER [%d][%d]
-                                    %s""",
+                            %sDraw...
+                            PLAYER [%d][%d]
+                            %s""",
                             ANSI_PURPLE, scorePlayer, scorePc, ANSI_RESET);
                     case 2 -> {
                         scorePc++;
                         System.out.printf("""
-                                        %sThe computer has won this round...
-                                        PLAYER [%d][%d]
-                                        %s""",
+                                %sThe computer has won this round...
+                                PLAYER [%d][%d]
+                                %s""",
                                 ANSI_RED, scorePlayer, scorePc, ANSI_RESET);
                     }
                 }
