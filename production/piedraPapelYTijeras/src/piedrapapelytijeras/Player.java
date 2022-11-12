@@ -13,6 +13,7 @@ public class Player extends CommonRules {
         this.localScore = 0;
         this.globalScore = 0;
     }
+    
 
 
     // ¡Está ofuscado apropósito por la broma! Obviamente, no hacemos las cosas así.
@@ -45,7 +46,7 @@ public class Player extends CommonRules {
                 // si esto no revienta la JVM...
                 numAction = Integer.parseInt(election);
                 // siguiente posible excepción, que esté fuera de rango
-                if (numAction >= 0 && numAction <= 3) {
+                if (numAction >= 0 && numAction <= 2) {
                     setAction(numAction);
                     loopKeyboardError = false;
                 } else {

@@ -13,7 +13,7 @@ public class Log {
             if (myObj.createNewFile()) {
                 System.out.println("File created: " + myObj.getName());
             } else {
-                System.out.println("File already exists.");
+                System.out.println("Stats will be saved on a csv file..");
             }
         } catch (IOException e) {
             System.out.println("An error occurred.");
