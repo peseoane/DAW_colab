@@ -7,9 +7,19 @@ public class Main {
      * UML, es decir, hay una superclase de normas, y dos clases de jugador, y NPC, luego,
      * pasaremos estos objetos creados a la clase Game, que decidirá el transcurso de la partida.
      *
-     * @param args usados para depurar, -1 lanza terminal externa, deshabilitados en release.
+     * @param args usados para depurar, -1 lanza terminal externa, y logea partidas para analizar estadísticas.
      */
     public static void main(String[] args) {
+
+        int logArg = 0;
+        if (args.length > 0) {
+            try {
+                logArg = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                System.err.println("Argument" + args[0] + " must be an integer.");
+                System.exit(1);
+            }
+        }
 
         boolean loopGame = true;
         String exitGame;
@@ -19,9 +29,16 @@ public class Main {
 
         System.out.println(TerminalAux.GREEN + TerminalAux.HI + player.getName() + TerminalAux.RESET);
 
+        Log.createLog();
+
         while (loopGame) {
 
-            player.playerChoice();
+            if (logArg == 1 ) {
+                player.setAction(new java.util.Random().nextInt(3));
+            }
+            else {
+                player.playerChoice();
+            }
 
             npc.calculateAction(player);
 
@@ -40,7 +57,11 @@ public class Main {
              */
             if (player.getLocalScore() >= 3 || npc.getLocalScore() >= 3) {
                 System.out.println(TerminalAux.ASK_NEXT_ROUND);
-                exitGame = CommonRules.input.nextLine();
+                if (logArg!=1){
+                    exitGame = CommonRules.input.nextLine();}
+                else{
+                    exitGame = "x";
+                }
 
                 if (exitGame.equalsIgnoreCase(TerminalAux.KEY_TO_EXIT)) {
                     System.err.println(TerminalAux.EXIT_GAME);
@@ -59,6 +80,7 @@ public class Main {
                      */
                     player.setLocalScore(0);
                     npc.setLocalScore(0);
+                    Log.registerLog(player, npc);
                 }
             }
         }
