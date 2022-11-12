@@ -1,21 +1,35 @@
 # DAW_colab
 
-[![Deploy Javadoc](https://github.com/peseoane/DAW_colab/actions/workflows/javadoc.yaml/badge.svg)](https://github.com/peseoane/DAW_colab/actions/workflows/javadoc.yaml)
-
 Desarrollo de aplicaciones web - Repositorio colaborativo
 
+@amelych
+@peseoane
+
+![diagram.png](diagram.png)
+
 ```mermaid
-classDiagram
 direction BT
-class Colour {
-  + Colour() 
-  - secret0(String) String
+class CommonRules {
+  + CommonRules() 
+  # int action
+  # int globalScore
+  # Scanner input
+  # String name
+  # int localScore
+  + getAction() int
+  + setLocalScore(int) void
+  + addGlobalScore() void
+  + getName() String
+  + setAction(int) void
+  + getGlobalScore() int
+  + getLocalScore() int
+  + addWin() void
 }
 class Game {
   + Game() 
-  + showElection(Player, Npc) void
   + calculateWinner(Player, Npc) void
   + showStats(Player, Npc) void
+  + showElection(Player, Npc) void
   + showCheatStatus(Npc) void
 }
 class Main {
@@ -24,44 +38,37 @@ class Main {
 }
 class Npc {
   + Npc() 
-  - int action
   - boolean godMode
-  - String name
-  - int localScore
-  - int globalScore
-  + createGodMode() boolean
+  + isGodMode() boolean
   + calculateAction(Player) void
-  + addWin() void
-  + addGlobalScore() void
-      String name
-      int globalScore
-      int localScore
-      boolean godMode
-      int action
-      }
-      class Player {
+  + createGodMode() boolean
+}
+class Player {
   + Player() 
-  - String name
-  - int globalScore
-  - int action
-  - int localScore
   + playerChoice() void
-  + addWin() void
-  + addGlobalScore() void
-  + playerName() void
-      String name
-      int globalScore
-      int localScore
-      int action
-      }
+  + playerName() String
+}
+class TerminalAux {
+  + TerminalAux() 
+  + String GREEN
+  + String ASK_NEXT_ROUND
+  + String HI
+  + String RED
+  + String EASTER_EGG1
+  + String NEW_GAME
+  + String EXIT_GAME
+  + String DIALOG
+  + String EASTER_EGG0
+  + String RESET
+  + String PURPLE
+  + String ENCODING
+  + String KEY_TO_EXIT
+  - secret0(String) String
+}
 
-Game  ..>  Colour 
-Game  ..>  Npc 
-Game  ..>  Player 
-Main  ..>  Colour 
-Main  ..>  Game 
 Main  ..>  Npc : «create»
 Main  ..>  Player : «create»
-Npc  ..>  Player 
-Player  ..>  Colour 
+Npc  -->  CommonRules 
+Player  -->  CommonRules 
+
 ```

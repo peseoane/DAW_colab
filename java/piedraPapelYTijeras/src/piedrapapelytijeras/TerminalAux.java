@@ -1,13 +1,18 @@
 package piedrapapelytijeras;
 
-public class Colour {
-    // caracteres de escape, en terminales modernas al mostrar esas cadenas al principal de cada texto, cambian el color, el reset lo reinicia al default del terminal, y dejo el menú aquí para no emborronar.
+/**
+ * Esta clase almacena caracteres de escape y textos como constantes, se almacenan aquí porque si no
+ * Java ya es un lenguaje muy boilerplate y queda totalmente ilegible.
+ * A ver si Kotlin gana cuota de mercado.
+ */
+public class TerminalAux {
     public static final String ENCODING = "ISO-8859-1";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
     public static final String GREEN = "\u001B[32m";
     public static final String PURPLE = "\u001B[35m";
     public static final String DIALOG = """
+            
             ### ROCK PAPER SCISSORS! ###
             It's your turn, what do you choose?
             0 - Rock.
@@ -15,7 +20,15 @@ public class Colour {
             2 - Scissors.
             """;
 
-    // qué será
+    public static final String NEW_GAME = "### NEW GANE ###";
+    public static final String HI = "Hi ";
+    public static final String ASK_NEXT_ROUND = "Play again? N to exit, press any key to continue";
+    public static final String EXIT_GAME = "### EXITING GAME ###";
+
+    public static final String KEY_TO_EXIT = "n";
+
+    // Los elementos a continuación son un huevo de pascua, no voy a comentarlos.
+
     public static final String EASTER_EGG0 = secret0("6D61727461");
     public static final String EASTER_EGG1 = secret0("486F6C612070726F666521");
 
