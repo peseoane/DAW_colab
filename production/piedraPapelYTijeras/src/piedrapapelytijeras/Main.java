@@ -33,10 +33,9 @@ public class Main {
 
         while (loopGame) {
 
-            if (logArg == 1 ) {
+            if (logArg == 1) {
                 player.setAction(new java.util.Random().nextInt(3));
-            }
-            else {
+            } else {
                 player.playerChoice();
             }
 
@@ -57,9 +56,9 @@ public class Main {
              */
             if (player.getLocalScore() >= 3 || npc.getLocalScore() >= 3) {
                 System.out.println(TerminalAux.ASK_NEXT_ROUND);
-                if (logArg!=1){
-                    exitGame = CommonRules.input.nextLine();}
-                else{
+                if (logArg != 1) {
+                    exitGame = CommonRules.input.nextLine();
+                } else {
                     exitGame = "x";
                 }
 
