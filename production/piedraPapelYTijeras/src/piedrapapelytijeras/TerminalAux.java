@@ -5,7 +5,7 @@ package piedrapapelytijeras;
  * Java ya es un lenguaje muy boilerplate y queda totalmente ilegible.
  * A ver si Kotlin gana cuota de mercado.
  */
-public class TerminalAux {
+abstract class TerminalAux {
     public static final String ENCODING = "ISO-8859-1";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";

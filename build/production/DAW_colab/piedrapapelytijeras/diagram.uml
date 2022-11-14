@@ -3,37 +3,39 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="72.5" y="420.0">piedrapapelytijeras.Npc</node>
-    <node x="-103.5" y="773.5">piedrapapelytijeras.Main</node>
-    <node x="299.5" y="310.0">piedrapapelytijeras.TerminalAux</node>
-    <node x="-106.5" y="442.5">piedrapapelytijeras.Player</node>
-    <node x="-113.5" y="-139.0">piedrapapelytijeras.CommonRules</node>
-    <node x="77.0" y="-39.5">piedrapapelytijeras.Game</node>
+    <node x="-65.93435878945184" y="502.6449849582557">piedrapapelytijeras.Main</node>
+    <node x="174.8902764495781" y="240.28954458834028">piedrapapelytijeras.Player</node>
+    <node x="431.7280397675007" y="113.00526828537522">piedrapapelytijeras.TerminalAux</node>
+    <node x="-116.1966089164198" y="-189.00590849114454">piedrapapelytijeras.CommonRules</node>
+    <node x="-153.1837521157829" y="234.24271666092199">piedrapapelytijeras.Npc</node>
+    <node x="174.2974174350798" y="-96.30972399256032">piedrapapelytijeras.Game</node>
+    <node x="543.0310984173362" y="-60.631280475742535">piedrapapelytijeras.Log</node>
   </nodes>
   <notes />
   <edges>
     <edge source="piedrapapelytijeras.Npc" target="piedrapapelytijeras.CommonRules" relationship="GENERALIZATION">
-      <point x="0.0" y="-72.0" />
-      <point x="171.0" y="392.0" />
-      <point x="-29.0" y="392.0" />
-      <point x="0.0" y="171.0" />
+      <point x="133.9997521157829" y="2.8333907800970337E-4" />
+      <point x="145.0" y="309.243" />
+      <point x="145.0" y="-10.506" />
+      <point x="113.9996089164198" y="-9.150885546205245E-5" />
     </edge>
     <edge source="piedrapapelytijeras.Main" target="piedrapapelytijeras.Player" relationship="CREATE">
-      <point x="0.0" y="-38.5" />
-      <point x="0.0" y="49.5" />
+      <point x="98.0" y="0.0" />
+      <point x="272.8902764495781" y="542.6449849582557" />
+      <point x="0.0" y="51.5" />
     </edge>
     <edge source="piedrapapelytijeras.Player" target="piedrapapelytijeras.CommonRules" relationship="GENERALIZATION">
-      <point x="0.0" y="-49.5" />
-      <point x="0.0" y="171.0" />
+      <point x="-98.00027644957811" y="4.554116597432767E-4" />
+      <point x="145.0" y="291.7900000000001" />
+      <point x="145.0" y="-10.506" />
+      <point x="113.9996089164198" y="-9.150885546205245E-5" />
     </edge>
     <edge source="piedrapapelytijeras.Main" target="piedrapapelytijeras.Npc" relationship="CREATE">
-      <point x="0.0" y="-38.5" />
-      <point x="-29.0" y="752.0" />
-      <point x="171.0" y="752.0" />
-      <point x="0.0" y="72.0" />
+      <point x="-51.249393326331074" y="-40.0" />
+      <point x="0.0" y="75.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="0.7702970297029703" showDependencies="true" x="194.5" y="366.0" />
+  <settings layout="Hierarchic Compact" zoom="1.0191146881287727" showDependencies="true" x="320.9220138203353" y="191.8193484698914" />
   <SelectedNodes />
   <Categories>
     <Category>Constructors</Category>

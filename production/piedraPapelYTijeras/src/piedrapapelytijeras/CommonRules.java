@@ -28,11 +28,11 @@ public class CommonRules {
      */
     protected int globalScore;
 
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public int getAction() {
+    protected int getAction() {
         return action;
     }
 
@@ -46,27 +46,27 @@ public class CommonRules {
      * @param action debe recibir el entero con la jugada ya procesada, si el ordenador hace trampa, la calculará antes
      *               de pasarla por aquí
      */
-    public void setAction(int action) {
+    protected void setAction(int action) {
         this.action = action;
     }
 
-    public int getLocalScore() {
+    protected int getLocalScore() {
         return localScore;
     }
 
-    public void setLocalScore(int localScore) {
+    protected void setLocalScore(int localScore) {
         this.localScore = localScore;
     }
 
-    public int getGlobalScore() {
+    protected int getGlobalScore() {
         return globalScore;
     }
 
-    public void addGlobalScore() {
+    protected void addGlobalScore() {
         this.globalScore++;
     }
 
-    public void addWin() {
+    protected void addWin() {
         this.localScore++;
     }
 }
