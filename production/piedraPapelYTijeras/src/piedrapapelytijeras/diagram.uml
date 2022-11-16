@@ -3,38 +3,38 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="204.0" y="307.0">piedrapapelytijeras.Main</node>
-    <node x="172.0" y="559.0">piedrapapelytijeras.Log</node>
-    <node x="-129.0" y="20.0">piedrapapelytijeras.Npc</node>
-    <node x="-33.0" y="230.0">piedrapapelytijeras.CommonRules</node>
-    <node x="204.0" y="426.0">piedrapapelytijeras.Player</node>
-    <node x="159.0" y="9.0">piedrapapelytijeras.Game</node>
+    <node x="153.0" y="-114.0">piedrapapelytijeras.CommonRules</node>
+    <node x="389.0" y="-70.0">piedrapapelytijeras.Game</node>
+    <node x="146.0" y="212.0">piedrapapelytijeras.Player</node>
+    <node x="146.0" y="403.0">piedrapapelytijeras.Main</node>
+    <node x="-129.0" y="-48.0">piedrapapelytijeras.Log</node>
+    <node x="337.0" y="201.0">piedrapapelytijeras.Npc</node>
   </nodes>
   <notes />
   <edges>
     <edge source="piedrapapelytijeras.Npc" target="piedrapapelytijeras.CommonRules" relationship="GENERALIZATION">
-      <point x="80.0" y="59.0" />
-      <point x="0.0" y="-114.0" />
+      <point x="0.0" y="-59.0" />
+      <point x="450.0" y="180.0" />
+      <point x="250.0" y="180.0" />
+      <point x="0.0" y="114.0" />
     </edge>
     <edge source="piedrapapelytijeras.Main" target="piedrapapelytijeras.Player" relationship="CREATE">
-      <point x="0.0" y="37.0" />
-      <point x="0.0" y="-48.0" />
+      <point x="0.0" y="-37.0" />
+      <point x="0.0" y="48.0" />
     </edge>
     <edge source="piedrapapelytijeras.Player" target="piedrapapelytijeras.CommonRules" relationship="GENERALIZATION">
-      <point x="-84.0" y="-23.5" />
-      <point x="97.0" y="106.5" />
+      <point x="20.0" y="-48.0" />
+      <point x="0.0" y="114.0" />
     </edge>
     <edge source="piedrapapelytijeras.Main" target="piedrapapelytijeras.Npc" relationship="CREATE">
       <point x="0.0" y="-37.0" />
-      <point x="288.0" y="196.5" />
-      <point x="79.0" y="196.5" />
-      <point x="95.0" y="59.0" />
+      <point x="230.0" y="380.0" />
+      <point x="450.0" y="380.0" />
+      <point x="0.0" y="59.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Compact" zoom="0.8666666666666667" showDependencies="true" x="288.0" y="607.0" />
-  <SelectedNodes>
-    <node>piedrapapelytijeras.Log</node>
-  </SelectedNodes>
+  <settings layout="Hierarchic Compact" zoom="1.0687397708674304" showDependencies="true" x="243.0" y="-4.678407350689156" />
+  <SelectedNodes />
   <Categories>
     <Category>Constructors</Category>
     <Category>Inner Classes</Category>

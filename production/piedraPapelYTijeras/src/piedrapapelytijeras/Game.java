@@ -24,12 +24,12 @@ public class Game {
         }
     }
 
-    public static void showStats(Player player, Npc npc){
+    public static void showStats(Player player, Npc npc) {
         // Las estadísticas como son siempre comunes, no tienen mucho sentido mostrarlas siempre en cada switch, las muevo fuera.
         System.out.printf("""
-               %s This game: %s [%d][%d] %s
-               %s All games: %s [%d][%d] %s%s
-               """, TerminalAux.PURPLE, player.getName(), player.getLocalScore(), npc.getLocalScore(), npc.getName(), TerminalAux.GREEN, player.getName(), player.getGlobalScore(), npc.getGlobalScore(), npc.getName(), TerminalAux.RESET);
+                %s This game: %s [%d][%d] %s
+                %s All games: %s [%d][%d] %s%s
+                """, TerminalAux.PURPLE, player.getName(), player.getLocalScore(), npc.getLocalScore(), npc.getName(), TerminalAux.GREEN, player.getName(), player.getGlobalScore(), npc.getGlobalScore(), npc.getName(), TerminalAux.RESET);
     }
 
     /**
@@ -48,7 +48,8 @@ public class Game {
             case 2 -> System.out.println(npc.getName() + " choose scissors");
         }
     }
-    public static void showCheatStatus(Npc npc){
+
+    public static void showCheatStatus(Npc npc) {
         System.out.println(TerminalAux.RED + "Cheat status: " + npc.isGodMode() + TerminalAux.RESET);
     }
 }
